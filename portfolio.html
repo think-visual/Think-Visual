@@ -1,3 +1,5 @@
+
+@ -1,1851 +0,0 @@
 <!doctype html>
 <html lang="en">
   <head>
@@ -1050,12 +1052,9 @@
           <button class="filter-btn" data-filter="automotive">
             Automotive
           </button>
-          <button class="filter-btn" data-filter="event">Events</button>
-          <button class="filter-btn" data-filter="cinematic">Cinematic</button>
-          <button class="filter-btn" data-filter="vfx">VFX / Motion</button>
-          <button class="filter-btn" data-filter="movie">Movie Clips</button>
-          <button class="filter-btn" data-filter="archery">Archery</button>
-          <button class="filter-btn" data-filter="reel">Reels</button>
+          <button class="filter-btn" data-filter="brands">Brands</button>
+          <button class="filter-btn" data-filter="creators">Creators</button>
+          <button class="filter-btn" data-filter="gov">Gov. Work</button>
           <button class="filter-btn" data-filter="website">Websites</button>
         </div>
         <div class="results-count" id="resultsCount"></div>
@@ -1210,43 +1209,12 @@
           category: "automotive",
           file: "Audi PPF 01.mp4",
         },
-        { title: "jeep Edit", category: "automotive", file: "jeep Edit.mp4" },
         {
           title: "UPPF Collabration",
           category: "automotive",
           file: "UPPF Collabration Linked Comp 01_2_chr2_prob3.mp4",
         },
-        {
-          title: "Black Fortuner PPF Reel",
-          category: "automotive",
-          file: "Black Fortuner PPF Reel.mp4",
-        },
-        {
-          title: "KIa Seltos PPF Enhanced",
-          category: "automotive",
-          file: "KIa Seltos PPF Enhanced.mp4",
-        },
         { title: "volvo 3", category: "automotive", file: "volvo 3.mp4" },
-        {
-          title: "Blue BMW X3 PPF",
-          category: "automotive",
-          file: "Blue BMW X3 PPF.mp4",
-        },
-        {
-          title: "Volvo Final 1",
-          category: "automotive",
-          file: "Volvo Final 1.mp4",
-        },
-        {
-          title: "BMW PPF 1",
-          category: "automotive",
-          file: "BMW PPF_1_chr2_prob3.mp4",
-        },
-        {
-          title: "Kia Syros PPF 02 Enhanced",
-          category: "automotive",
-          file: "Kia Syros PPF 02 Enhanced.mp4",
-        },
         {
           title: "Xuv 700 Glass Tint",
           category: "automotive",
@@ -1258,29 +1226,9 @@
           file: "bmw x3 PPF edited_1.mp4",
         },
         {
-          title: "Kia Syrus PPF_1",
-          category: "automotive",
-          file: "Kia Syrus PPF_1.mp4",
-        },
-        {
           title: "XUV 700 Linked Comp 02 Enhanced",
           category: "automotive",
           file: "XUV 700 Linked Comp 02 Enhanced.mp4",
-        },
-        {
-          title: "Mahindra XUV 700 1",
-          category: "automotive",
-          file: "Mahindra XUV 700 1.mp4",
-        },
-        {
-          title: "Creta 14 june Final",
-          category: "automotive",
-          file: "Creta 14 june Final.mp4",
-        },
-        {
-          title: "Mercedies Benz GLA 27th Nov",
-          category: "automotive",
-          file: "Mercedies Benz GLA 27th Nov.mp4",
         },
         {
           title: "XUV PPF ENHANCED",
@@ -1288,24 +1236,9 @@
           file: "XUV PPF ENHANCED.mp4",
         },
         {
-          title: "Creta Review 01",
-          category: "automotive",
-          file: "Creta Review 01.mp4",
-        },
-        {
-          title: "Mercedies GLE Review Video",
-          category: "automotive",
-          file: "Mercedies GLE Review Video.mp4",
-        },
-        {
           title: "Xuv Speed Ramp {Efects}",
-          category: "vfx",
-          file: "Xuv Speed Ramp {Efects} 14 April FINAL.mp4",
-        },
-        {
-          title: "Mercedies Linked Comp 05",
           category: "automotive",
-          file: "Mercedies Linked Comp 05.mp4",
+          file: "Xuv Speed Ramp {Efects} 14 April FINAL.mp4",
         },
         {
           title: "ZX 10r PPF 01",
@@ -1323,20 +1256,9 @@
           file: "Mg Hector 16 April 2.mp4",
         },
         {
-          title: "Defender PPF",
-          category: "automotive",
-          file: "Defender PPF.mp4",
-        },
-        { title: "MG Hector", category: "automotive", file: "MG Hector.mp4" },
-        {
           title: "FORTUNER PPF ENHANCED 2",
           category: "automotive",
           file: "FORTUNER PPF ENHANCED 2.mp4",
-        },
-        {
-          title: "Scorpio N ppf 01 Enhanced",
-          category: "automotive",
-          file: "Scorpio N ppf 01 Enhanced.mp4",
         },
         {
           title: "Fortuner ppf final",
@@ -1349,214 +1271,158 @@
           file: "Skoda PPF 6 Jan Final 1.mp4",
         },
         {
-          title: "Fortuner ppf final chr2",
-          category: "automotive",
-          file: "Fortuner ppf final_chr2_prob3.mp4",
-        },
-        {
-          title: "Tata Safari PPF Enhanced",
-          category: "automotive",
-          file: "Tata Safari PPF Enhanced.mp4",
-        },
-        {
           title: "Fortuner PPF",
           category: "automotive",
           file: "Fortuner PPF.mp4",
-        },
-        {
-          title: "Tata Safari PPF",
-          category: "automotive",
-          file: "Tata Safari PPF.mp4",
-        },
-        {
-          title: "Green Thar Rox PPF Reel",
-          category: "automotive",
-          file: "Green Thar Rox PPF Reel.mp4",
-        },
-        {
-          title: "Thar 12Oct 01",
-          category: "automotive",
-          file: "Thar 12Oct 01.mp4",
-        },
-        {
-          title: "Harley Davidson PPF",
-          category: "automotive",
-          file: "Harley Davidson PPF_1.mp4",
-        },
-        {
-          title: "Thar Roxx matt Enhanced",
-          category: "automotive",
-          file: "Thar Roxx matt Enhanced.mp4",
         },
         {
           title: "Honda City Color PPF Reel",
           category: "automotive",
           file: "Honda City Color PPF Reel.mp4",
         },
-        {
-          title: "Thar Roxx matt PPF",
-          category: "automotive",
-          file: "Thar Roxx matt PPF.mp4",
-        },
-        {
-          title: "Toyata Hycross Glass Tint Enhanced",
-          category: "automotive",
-          file: "Toyata Hycross Glass Tint Enhanced.mp4",
-        },
-        {
-          title: "Innova Hycross PPF",
-          category: "automotive",
-          file: "Innova Hycross PPF_2.mp4",
-        },
         // ── ARCHERY ──
         {
           title: "Whats your best therapy Archery",
-          category: "archery",
+          category: "brands",
           file: "Whats your best therapy Archery.mp4",
         },
         {
           title: "Archery Event Day 1",
-          category: "archery",
+          category: "brands",
           file: "Archery Event Day 1.mp4",
         },
         {
           title: "3 Days To Go Archery Event 01",
-          category: "archery",
+          category: "brands",
           file: "3 Days To Go Archery Event 01.mp4",
         },
         {
           title: "Jarimin Daimari Archery_2",
-          category: "archery",
+          category: "brands",
           file: "Jarimin Daimari Archery_2.mp4",
         },
         // ── REELS ──
-        { title: "Lux Reel", category: "reel", file: "Lux Reel.mp4" },
+        { title: "Lux Reel", category: "creators", file: "Lux Reel.mp4" },
         {
           title: "my Setup Edit Enhanced",
-          category: "reel",
+          category: "creators",
           file: "my Setup Edit Enhanced.mp4",
         },
         {
           title: "DARKNESS BIKE REEL  7FEB_ Final",
-          category: "reel",
+          category: "creators",
           file: "DARKNESS BIKE REEL  7FEB_ Final.mp4",
         },
         {
           title: "Darkness pookie reel Linked Comp 01_2",
-          category: "reel",
+          category: "creators",
           file: "Darkness pookie reel Linked Comp 01_2.mp4",
         },
-        { title: "saloon", category: "reel", file: "saloon.mp4" },
+        { title: "saloon", category: "brands", file: "saloon.mp4" },
         {
           title: "Happy Travels Reel Final",
-          category: "reel",
+          category: "brands",
           file: "Happy Travels Reel Final.mp4",
         },
         {
           title: "Thar Reel {Vishal Bhaiya}",
-          category: "automotive",
+          category: "creators",
           file: "Thar reel {Vishal Bhaiya}.mp4",
         },
         // ── EVENTS ──
-        { title: "31 party", category: "event", file: "31 party.mp4" },
+        { title: "31 party", category: "brands", file: "31 party.mp4" },
         {
           title: "Khana Drama Final Video enhanced 60 fps",
-          category: "event",
+          category: "brands",
           file: "Khana Drama Final Video enhanced 60 fps.mp4",
         },
         {
           title: "Ashley Event Final",
-          category: "event",
+          category: "brands",
           file: "Ashley Event Final.mp4",
         },
         {
           title: "QNI 1st Event Final",
-          category: "event",
+          category: "brands",
           file: "QNI 1st Event Final.mp4",
         },
         {
           title: "Avhinash 1080 Linked Comp 03",
-          category: "event",
+          category: "creators",
           file: "Avhinash 1080 Linked Comp 03.mp4",
         },
         {
           title: "Radio City Event 001",
-          category: "event",
+          category: "brands",
           file: "Radio City Event 001.mp4",
         },
         {
           title: "Ramyata Holi Linked Comp 01_chr2_prob3",
-          category: "event",
+          category: "creators",
           file: "Ramyata Holi Linked Comp 01_chr2_prob3.mp4",
         },
         {
           title: "Dandiya Night Rv No Logo",
-          category: "event",
+          category: "reels",
           file: "Dandiya Night Rv No Logo.mp4",
         },
         {
-          title: "Shalini dii final edit",
-          category: "event",
-          file: "Shalini dii final edit.mp4",
-        },
-        {
           title: "Shri Ram Furniture 01",
-          category: "event",
+          category: "brands",
           file: "Shri Ram Furniture 01.mp4",
         },
         {
           title: "JHool Promotional Video 1",
-          category: "event",
+          category: "brands",
           file: "JHool Promotional Video 1.mp4",
         },
         // ── CINEMATIC ──
         {
           title: "Alto edit enhanced",
-          category: "cinematic",
+          category: "reels",
           file: "Alto edit enhanced.mp4",
         },
         {
           title: "City Marbles Mirror 01",
-          category: "cinematic",
+          category: "brands",
           file: "City Marbles Mirror 01.mp4",
         },
         {
           title: "Duke Cinematic 2 Enhanced",
-          category: "cinematic",
+          category: "creators",
           file: "Duke Cinematic 2 Enhanced.mp4",
-        },
-        // ── VFX ──
-        {
-          title: "Doraemon Reveal clip",
-          category: "vfx",
-          file: "Doraemon Reveal clip.mp4",
         },
         // ── GROUP BIKERS ──
         {
           title: "GROUP BIKERS Linked Comp 01",
-          category: "automotive",
+          category: "creators",
           file: "GROUP BIKERS Linked Comp 01.mp4",
         },
         // ── ROYAL ENFIELD ──
         {
           title: "Royal Enfield Day 2",
-          category: "automotive",
+          category: "creators",
           file: "Royal Enfield Day 2.mp4",
         },
         {
+          title: "Alto edit enhanced",
+          category: "creators",
+          file: "Alto edit enhanced.mp4",
+        },
+        {
           title: "Royal Enfield_1",
-          category: "automotive",
+          category: "creators",
           file: "Royal Enfield_1.mp4",
         },
         // ── ARCHERY CAMERA EDIT ──
         {
           title: "Archery Camera Edit 01",
-          category: "archery",
+          category: "brands",
           file: "Archery Camera Edit 01.mp4",
         },
         {
           title: "Archery Edit",
-          category: "archery",
+          category: "brands",
           file: "Archery Edit.mp4",
         },
 
@@ -1565,49 +1431,55 @@
         // ═══════════════════════════════════════════════════════════
         {
           title: "Tata Marathon Highlight Final",
-          category: "movie",
+          category: "brands",
           file: "Tata Marathon Highlight Final.mp4",
         },
         {
           title: "Wedding invitation",
-          category: "movie",
+          category: "creators",
           file: "Wedding invitation.mp4",
         },
         {
           title: "Piyush Greh Pravesh Linked Comp 04_1",
-          category: "movie",
+          category: "creators",
           file: "Piyush Greh Pravesh Linked Comp 04_1.mp4",
         },
         {
           title: "Dayal Skyline Event",
-          category: "movie",
+          category: "brands",
           file: "Dayal Skyline Event.mp4",
         },
         {
           title: "JRD TATA EDIT 01",
-          category: "movie",
+          category: "brands",
           file: "JRD TATA EDIT 01.mp4",
         },
-        { title: "WB 1", category: "movie", file: "WB 1.mp4" },
-        { title: "WB 2", category: "movie", file: "WB 2.mp4" },
-        { title: "WB 3", category: "movie", file: "WB 3.mp4" },
-        { title: "WB 4", category: "movie", file: "WB 4.mp4" },
-        { title: "WB 5", category: "movie", file: "WB 5.mp4" },
-        { title: "WB 6", category: "movie", file: "WB 6.mp4" },
-        { title: "WB 7", category: "movie", file: "WB 7.mp4" },
-        { title: "WB 8", category: "movie", file: "WB 8.mp4" },
-        { title: "WB 9", category: "movie", file: "WB 9.mp4" },
-        { title: "WB 10", category: "movie", file: "WB 10.mp4" },
-        { title: "WB 11", category: "movie", file: "WB 11.mp4" },
-        { title: "WB 12", category: "movie", file: "WB 12.mp4" },
-        { title: "WB 13", category: "movie", file: "WB 13.mp4" },
-        { title: "WB 14", category: "movie", file: "WB 14.mp4" },
-        { title: "WB 15", category: "movie", file: "WB 15.mp4" },
-        { title: "WB 16", category: "movie", file: "WB 16.mp4" },
-        { title: "WB 17", category: "movie", file: "WB 17.mp4" },
-        { title: "WB 18", category: "movie", file: "WB 18.mp4" },
-        { title: "WB 19", category: "movie", file: "WB 19.mp4" },
-        { title: "WB 20", category: "movie", file: "WB 20.mp4" },
+        { title: "WB 1", category: "gov", file: "WB 1.mp4" },
+        { title: "WB 2", category: "gov", file: "WB 2.mp4" },
+        { title: "WB 3", category: "gov", file: "WB 3.mp4" },
+        { title: "WB 4", category: "gov", file: "WB 4.mp4" },
+        { title: "WB 5", category: "gov", file: "WB 5.mp4" },
+        { title: "WB 6", category: "gov", file: "WB 6.mp4" },
+        { title: "WB 7", category: "gov", file: "WB 7.mp4" },
+        { title: "WB 8", category: "gov", file: "WB 8.mp4" },
+        { title: "WB 9", category: "gov", file: "WB 9.mp4" },
+        { title: "WB 10", category: "gov", file: "WB 10.mp4" },
+        { title: "WB 11", category: "gov", file: "WB 11.mp4" },
+        { title: "WB 12", category: "gov", file: "WB 12.mp4" },
+        { title: "WB 13", category: "gov", file: "WB 13.mp4" },
+        { title: "WB 14", category: "gov", file: "WB 14.mp4" },
+        { title: "WB 15", category: "gov", file: "WB 15.mp4" },
+        { title: "WB 16", category: "gov", file: "WB 16.mp4" },
+        { title: "WB 17", category: "gov", file: "WB 17.mp4" },
+        { title: "WB 18", category: "gov", file: "WB 18.mp4" },
+        { title: "WB 19", category: "gov", file: "WB 19.mp4" },
+        { title: "WB 20", category: "gov", file: "WB 20.mp4" },
+        
+        {
+          title: "Shalini dii final edit",
+          category: "creators",
+          file: "Shalini dii final edit.mp4",
+        },
 
         // ═══════════════════════════════════════════════════════════
         // WEBSITES — "website" category
@@ -1670,11 +1542,10 @@
 
       const catLabels = {
         automotive: "Automotive",
-        event: "Event",
+        creators: "Creators",
         cinematic: "Cinematic",
-        vfx: "VFX / Motion",
+        brands: "Brands",
         movie: "Movie Clip",
-        archery: "Archery",
         reel: "Reel",
         website: "Website",
       };
