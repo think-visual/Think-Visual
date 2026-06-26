@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -284,7 +283,6 @@
         gap: 0;
       }
 
-      /* Scroll progress bar */
       .nav-progress {
         position: absolute;
         bottom: 0;
@@ -381,7 +379,6 @@
         flex-shrink: 0;
       }
 
-      /* ── Animated hamburger ── */
       .hamburger {
         display: none;
         flex-direction: column;
@@ -453,7 +450,6 @@
         margin-bottom: 5px;
       }
 
-      /* Open state — morphs to × */
       .hamburger[aria-expanded="true"] .bar:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
         background: var(--primary);
@@ -486,7 +482,6 @@
         overflow: hidden;
       }
 
-      /* Gradient border left */
       .mobile-drawer::after {
         content: "";
         position: absolute;
@@ -503,7 +498,6 @@
         );
       }
 
-      /* Ambient glow top-right inside drawer */
       .mobile-drawer::before {
         content: "";
         position: absolute;
@@ -582,7 +576,6 @@
         transform: rotate(90deg) scale(1.05);
       }
 
-      /* Nav links with stagger animation */
       .mobile-nav-links {
         flex: 1;
         display: flex;
@@ -610,7 +603,6 @@
         align-items: center;
         gap: 14px;
         border-left: 2px solid transparent;
-        /* Stagger-in animation */
         opacity: 0;
         transform: translateX(18px);
       }
@@ -622,23 +614,18 @@
       .mobile-drawer.active .mobile-nav-links a:nth-child(1) {
         animation-delay: 0.08s;
       }
-
       .mobile-drawer.active .mobile-nav-links a:nth-child(2) {
         animation-delay: 0.13s;
       }
-
       .mobile-drawer.active .mobile-nav-links a:nth-child(3) {
         animation-delay: 0.18s;
       }
-
       .mobile-drawer.active .mobile-nav-links a:nth-child(4) {
         animation-delay: 0.23s;
       }
-
       .mobile-drawer.active .mobile-nav-links a:nth-child(5) {
         animation-delay: 0.28s;
       }
-
       .mobile-drawer.active .mobile-nav-links a:nth-child(6) {
         animation-delay: 0.33s;
       }
@@ -720,7 +707,6 @@
         color: var(--primary);
       }
 
-      /* Drawer footer */
       .drawer-footer {
         position: relative;
         z-index: 1;
@@ -872,7 +858,6 @@
         0% {
           transform: translate(0, 0) scale(1);
         }
-
         100% {
           transform: translate(50px, 35px) scale(1.12);
         }
@@ -1118,7 +1103,6 @@
         100% {
           transform: scale(1);
         }
-
         50% {
           transform: scale(1.04);
         }
@@ -1157,7 +1141,6 @@
           opacity: 0.3;
           transform: scaleY(1);
         }
-
         50% {
           opacity: 1;
           transform: scaleY(1.1);
@@ -1521,7 +1504,6 @@
         0% {
           transform: translateX(0);
         }
-
         100% {
           transform: translateX(calc(-50% - 16px));
         }
@@ -1663,7 +1645,6 @@
         opacity: 1;
       }
 
-      /* Website card styles for portfolio grid */
       .website-card {
         position: relative;
         border-radius: var(--radius);
@@ -1684,7 +1665,6 @@
         box-shadow: 0 16px 50px rgba(0, 0, 0, 0.55);
       }
       .website-card .website-image {
-        /* width: 450%; */
         aspect-ratio: 16/9;
         object-fit: cover;
         display: block;
@@ -1790,11 +1770,278 @@
           opacity: 0;
           transform: translateY(20px);
         }
-
         to {
           opacity: 1;
           transform: translateY(0);
         }
+      }
+
+      /* ══ CASE STUDIES ═══════════════════════════════════════ */
+      .case-studies {
+        background: var(--dark);
+        position: relative;
+      }
+
+      .case-studies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+        gap: 24px;
+        max-width: 1140px;
+        margin: 56px auto 0;
+      }
+
+      .case-card {
+        background: var(--dark-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        transition: var(--transition);
+      }
+
+      .case-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--border-hover);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      }
+
+      .case-card .case-media {
+        aspect-ratio: 16/9;
+        background: #111;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light-gray);
+        font-size: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .case-card .case-media img,
+      .case-card .case-media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .case-card .case-body {
+        padding: 24px 22px 28px;
+      }
+
+      .case-card .case-tag {
+        display: inline-block;
+        font-size: 0.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--primary);
+        background: rgba(255, 89, 0, 0.1);
+        padding: 4px 12px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+
+      .case-card h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .case-card .case-desc {
+        color: var(--light-gray);
+        font-size: 0.85rem;
+        line-height: 1.7;
+        margin-bottom: 12px;
+      }
+
+      .case-card .case-metrics {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--border);
+        padding-top: 14px;
+        margin-top: 4px;
+      }
+
+      .case-card .metric {
+        display: flex;
+        align-items: baseline;
+        gap: 4px;
+      }
+
+      .case-card .metric .value {
+        font-weight: 700;
+        color: var(--primary);
+        font-size: 1.05rem;
+      }
+
+      .case-card .metric .label {
+        font-size: 0.7rem;
+        color: var(--light-gray);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .case-card .case-quote {
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.85rem;
+        border-left: 2px solid var(--primary);
+        padding-left: 14px;
+        margin-top: 14px;
+      }
+
+      /* ══ TESTIMONIALS ═══════════════════════════════════════ */
+      .testimonials {
+        background: var(--black);
+        position: relative;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+        gap: 24px;
+        max-width: 1140px;
+        margin: 56px auto 0;
+      }
+
+      .testimonial-card {
+        background: var(--dark-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 28px 24px;
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .testimonial-card:hover {
+        border-color: var(--border-hover);
+        transform: translateY(-3px);
+      }
+
+      .testimonial-card .quote-icon {
+        font-size: 2rem;
+        color: rgba(255, 89, 0, 0.15);
+        margin-bottom: 8px;
+        line-height: 1;
+      }
+
+      .testimonial-card blockquote {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.8;
+        font-style: italic;
+        margin-bottom: 16px;
+      }
+
+      .testimonial-card .client-info {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+
+      .testimonial-card .client-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #222;
+        border: 2px solid var(--primary);
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .testimonial-card .client-name {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .testimonial-card .client-role {
+        font-size: 0.72rem;
+        color: var(--light-gray);
+      }
+
+      .testimonial-card .client-rating {
+        color: #fbbf24;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        margin-top: 2px;
+      }
+
+      /* ══ FAQ ════════════════════════════════════════════════ */
+      .faq {
+        background: var(--dark);
+        position: relative;
+      }
+
+      .faq-grid {
+        max-width: 800px;
+        margin: 56px auto 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .faq-item {
+        background: var(--dark-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        transition: var(--transition);
+      }
+
+      .faq-item:hover {
+        border-color: var(--border-hover);
+      }
+
+      .faq-question {
+        width: 100%;
+        padding: 18px 22px;
+        background: transparent;
+        border: none;
+        color: var(--white);
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-align: left;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        transition: var(--transition);
+        min-height: 56px;
+      }
+
+      .faq-question:hover {
+        color: var(--primary);
+      }
+
+      .faq-question .faq-icon {
+        font-size: 0.8rem;
+        color: var(--primary);
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+      }
+
+      .faq-item.active .faq-question .faq-icon {
+        transform: rotate(180deg);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .faq-answer-inner {
+        padding: 0 22px 20px;
+        color: var(--light-gray);
+        font-size: 0.88rem;
+        line-height: 1.8;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 300px;
       }
 
       /* ══ CONTACT ═══════════════════════════════════════════ */
@@ -1820,9 +2067,93 @@
         );
       }
 
-      .contact-form {
-        max-width: 600px;
-        margin: 50px auto 0;
+      .contact-wrapper {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 60px;
+        align-items: start;
+        text-align: left;
+      }
+
+      .contact-info-col {
+        padding-top: 8px;
+      }
+
+      .contact-info-col .section-tag {
+        display: block;
+      }
+
+      .contact-info-col .section-title {
+        margin-bottom: 16px;
+      }
+
+      .contact-info-col .divider {
+        margin-left: 0;
+        margin-bottom: 24px;
+      }
+
+      .contact-info-col p {
+        color: var(--light-gray);
+        font-size: 0.92rem;
+        line-height: 1.8;
+        margin-bottom: 28px;
+      }
+
+      .contact-methods {
+        display: grid;
+        gap: 16px;
+      }
+
+      .contact-method {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 20px;
+        background: var(--dark-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        transition: var(--transition);
+      }
+
+      .contact-method:hover {
+        border-color: var(--border-hover);
+      }
+
+      .contact-method .method-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 89, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        color: var(--primary);
+        flex-shrink: 0;
+      }
+
+      .contact-method .method-content h4 {
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+
+      .contact-method .method-content p {
+        font-size: 0.82rem;
+        color: var(--light-gray);
+        margin-bottom: 0;
+      }
+
+      .contact-method .method-content .method-response {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      .contact-form-col .contact-form {
+        max-width: 100%;
+        margin: 0;
         display: grid;
         gap: 16px;
         text-align: left;
@@ -2013,59 +2344,36 @@
       .reveal-delay-1 {
         transition-delay: 0.08s;
       }
-
       .reveal-delay-2 {
         transition-delay: 0.16s;
       }
-
       .reveal-delay-3 {
         transition-delay: 0.24s;
       }
-
       .reveal-delay-4 {
         transition-delay: 0.32s;
       }
-
       .reveal-delay-5 {
         transition-delay: 0.4s;
       }
-
       .reveal-delay-6 {
         transition-delay: 0.48s;
       }
 
-      /* ══════════════════════════════════════════════════════════════
-   responsive.css — Think Visual Portfolio
-   Zero horizontal scroll, mobile-first progressive enhancement
-   Breakpoints:
-     xs  : ≤ 360px
-     sm  : 361px – 480px
-     md  : 481px – 767px
-     lg  : 768px – 1023px
-     xl  : 1024px – 1399px
-     2xl : ≥ 1400px
-   ══════════════════════════════════════════════════════════════ */
-
-      /* ── 0. GLOBAL OVERFLOW GUARD ───────────────────────────────
-   This is the single most reliable way to kill horizontal
-   scroll caused by any element wider than the viewport.      */
+      /* ══ RESPONSIVE ════════════════════════════════════════════ */
       html,
       body {
         max-width: 100%;
         overflow-x: hidden;
       }
 
-      /* Every element is already box-sized in the main stylesheet,
-   but belt-and-braces here for any third-party content.     */
       *,
       *::before,
       *::after {
         box-sizing: border-box;
         min-width: 0;
-        /* lets flex/grid children shrink below their intrinsic size */
       }
 
-      /* Images & media never overflow their container */
       img,
       video,
       iframe,
@@ -2075,60 +2383,61 @@
         height: auto;
       }
 
-      /* ── 1. 2XL: Large desktops ≥ 1400px ───────────────────── */
       @media (min-width: 1400px) {
         .hero-container {
           max-width: 1340px;
         }
-
         .services-grid {
           max-width: 1340px;
           grid-template-columns: repeat(4, 1fr);
         }
-
         .about-inner {
           max-width: 1200px;
         }
-
         .portfolio-grid {
           max-width: 1340px;
           grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         }
-
         .footer-top,
         .footer-bottom {
           max-width: 1300px;
         }
-
         .hero-name {
           font-size: 7rem;
         }
+        .case-studies-grid {
+          max-width: 1340px;
+        }
+        .testimonials-grid {
+          max-width: 1340px;
+        }
       }
 
-      /* ── 2. LG: Tablet landscape — hide desktop nav ─────────── */
       @media (max-width: 1023px) {
         #nav-menu {
           display: none;
         }
-
         .hamburger {
           display: flex;
         }
-
-        /* About two-column → single column */
         .about-inner {
           grid-template-columns: 1fr;
           gap: 48px;
         }
-
         .skills-col {
           max-width: 500px;
           margin: 0 auto;
           width: 100%;
         }
+        .contact-wrapper {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .contact-info-col .section-title {
+          font-size: clamp(1.8rem, 6vw, 2.8rem);
+        }
       }
 
-      /* Keep desktop nav visible and hamburger hidden on ≥ 1024px */
       @media (min-width: 1024px) {
         .hamburger {
           display: none !important;
@@ -2139,57 +2448,45 @@
           overflow: hidden !important;
           pointer-events: none !important;
         }
-
         #nav-menu {
           display: flex !important;
         }
       }
 
-      /* ── 3. MD: Tablets & large phones 481–767px ─────────────── */
       @media (max-width: 767px) {
         :root {
           --nav-h: 62px;
           --section-px: clamp(16px, 4vw, 28px);
         }
 
-        /* ─ Navbar ─ */
         .navbar {
           padding: 0 18px;
         }
-
         .navbar.scrolled {
           height: 54px;
         }
-
         .logo img {
           height: 44px;
         }
-
         .navbar.scrolled .logo img {
           height: 36px;
         }
-
-        /* Hide "Hire Me" label — keep icon only to save space */
         .btn-hire-text {
           display: none;
         }
-
         .nav-right .btn {
           padding: 10px 14px;
           font-size: 0.82rem;
           min-height: 42px;
         }
-
         .nav-right {
           gap: 6px;
         }
 
-        /* ─ Hero ─ */
         .hero {
           padding: calc(var(--nav-h) + 28px) var(--section-px) 56px;
           align-items: flex-start;
         }
-
         .hero-container {
           flex-direction: column;
           gap: 36px;
@@ -2197,7 +2494,6 @@
           text-align: center;
           width: 100%;
         }
-
         .hero-left {
           max-width: 100%;
           width: 100%;
@@ -2205,18 +2501,14 @@
           flex-direction: column;
           align-items: center;
         }
-
-        /* Photo above text on mobile */
         .hero-right {
           order: -1;
           width: 100%;
           justify-content: center;
         }
-
         .hero-eyebrow {
           justify-content: center;
         }
-
         .hero-tagline {
           border-left: none;
           border-top: 2px solid var(--primary);
@@ -2225,84 +2517,69 @@
           text-align: center;
           max-width: 100%;
         }
-
         .hero-socials {
           justify-content: center;
         }
-
         .hero-buttons {
           justify-content: center;
           width: 100%;
         }
-
         .hero-img {
           max-width: 260px;
           width: 260px;
           height: auto;
         }
-
         .hero-img-placeholder {
           width: 240px;
           height: 300px;
         }
-
         .hero-badge {
           bottom: -14px;
           left: -8px;
           font-size: 0.68rem;
           padding: 9px 13px;
         }
-
         .hero-counters {
           max-width: 100%;
           width: 100%;
         }
-
         .hero-scroll {
           display: none;
         }
 
-        /* ─ Section titles ─ */
         .section-title {
           font-size: clamp(2rem, 8vw, 3rem);
         }
 
-        /* ─ Services ─ */
         .services-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 14px;
         }
 
-        /* ─ About ─ */
         .about-inner {
           grid-template-columns: 1fr;
           gap: 40px;
         }
-
         .skills-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 20px;
         }
 
-        /* ─ Team ─ */
         .team-grid {
           gap: 16px;
           flex-wrap: wrap;
           justify-content: center;
         }
-
         .team-card {
           width: calc(50% - 8px);
           min-width: 140px;
           padding: 20px 16px;
         }
-
         .team-pfp {
           width: 80px;
           height: 80px;
         }
 
-        /* ─ Portfolio filter — horizontal scroll strip ─ */
         .portfolio-filter {
           flex-wrap: nowrap;
           justify-content: flex-start;
@@ -2311,7 +2588,6 @@
           scrollbar-width: none;
           padding: 4px 0 10px;
           gap: 8px;
-          /* Fade edges so it looks intentional, not broken */
           mask: linear-gradient(
             90deg,
             transparent 0%,
@@ -2327,40 +2603,32 @@
             transparent 100%
           );
         }
-
         .portfolio-filter::-webkit-scrollbar {
           display: none;
         }
-
         .filter-pill {
           flex-shrink: 0;
           padding: 7px 16px;
           font-size: 0.8rem;
         }
 
-        /* ─ Portfolio grid ─ */
         .portfolio-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 10px;
           margin-top: 28px;
         }
-
         .video-card {
           border-radius: 10px;
         }
-
         .video-card video {
           border-radius: 10px;
         }
-
-        /* Always show label on touch — no hover state available */
         .video-label {
           opacity: 1;
           font-size: 0.72rem;
           padding: 20px 10px 10px;
           letter-spacing: 0;
         }
-
         .portfolio-scroll-hint {
           display: flex;
           align-items: center;
@@ -2373,10 +2641,21 @@
           margin-top: 20px;
         }
 
+        .case-studies-grid {
+          grid-template-columns: 1fr;
+        }
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-wrapper {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
         .view-more-container {
           margin-top: 32px;
         }
-
         .view-more-btn {
           width: 100%;
           justify-content: center;
@@ -2384,28 +2663,23 @@
           font-size: 0.95rem;
         }
 
-        /* ─ Contact form ─ */
         .form-row {
           grid-template-columns: 1fr;
         }
 
-        /* ─ Footer ─ */
         footer {
           padding: 44px 20px 22px;
         }
-
         .footer-top {
           flex-direction: column;
           align-items: flex-start;
           gap: 20px;
           padding-bottom: 28px;
         }
-
         .footer-nav {
           gap: 14px;
           flex-wrap: wrap;
         }
-
         .footer-bottom {
           flex-direction: column;
           align-items: flex-start;
@@ -2413,75 +2687,59 @@
         }
       }
 
-      /* ── 4. SM: Phones 361–480px ─────────────────────────────── */
       @media (max-width: 480px) {
         :root {
           --section-px: 16px;
         }
 
-        /* ─ Navbar ─ */
         .navbar {
           padding: 0 14px;
         }
-
         .nav-right {
           gap: 4px;
         }
-
-        /* Make the orange hire button icon-only, consistent size */
         .navbar .btn.orange {
           width: 40px;
           min-height: 40px;
           padding: 8px;
           justify-content: center;
         }
-
-        /* Full-width drawer on small phones */
         .mobile-drawer {
           width: 100%;
           max-width: 100vw;
         }
 
-        /* ─ Hero ─ */
         .hero {
           padding: 80px 16px 48px;
         }
-
         .hero-container {
           gap: 28px;
         }
-
         .hero-name {
           font-size: clamp(2.4rem, 16vw, 3.6rem);
         }
-
         .hero-socials a {
           width: 40px;
           height: 40px;
           font-size: 0.9rem;
         }
-
         .hero-buttons {
           flex-direction: column;
           width: 100%;
         }
-
         .hero-buttons .btn {
           width: 100%;
           justify-content: center;
         }
-
         .hero-img {
           max-width: 220px;
           width: 220px;
           height: auto;
         }
-
         .hero-img-placeholder {
           width: 220px;
           height: 280px;
         }
-
         .hero-badge {
           font-size: 0.7rem;
           padding: 10px 14px;
@@ -2489,63 +2747,52 @@
           bottom: -16px;
         }
 
-        /* ─ Section titles ─ */
         .section-title {
           font-size: clamp(1.9rem, 9vw, 2.8rem);
         }
 
-        /* ─ Services: single column on small phones ─ */
         .services-grid {
           grid-template-columns: 1fr;
         }
 
-        /* ─ About ─ */
         .about-text-col .btn {
           width: 100%;
           justify-content: center;
         }
-
         .skills-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 18px;
           max-width: 280px;
           margin: 0 auto;
         }
-
         .progress-ring-wrap,
         .progress-ring-wrap svg {
           width: 95px;
           height: 95px;
         }
 
-        /* ─ Team: stack cards ─ */
         .team-grid {
           flex-direction: column;
           align-items: center;
         }
-
         .team-card {
           width: 100%;
           max-width: 320px;
         }
 
-        /* ─ Brands ─ */
         .brand-item {
           padding: 10px 18px;
           min-width: 110px;
         }
-
         .brand-pfp {
           width: 70px;
           height: 70px;
         }
 
-        /* ─ Portfolio ─ */
         .portfolio-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 10px;
         }
-
         .filter-pill {
           padding: 7px 13px;
           font-size: 0.75rem;
@@ -2558,46 +2805,37 @@
           padding: 13px 20px;
         }
 
-        /* ─ Contact ─ */
         .contact-form input,
         .contact-form textarea {
           padding: 12px 14px;
           font-size: 0.875rem;
         }
-
         .contact-form .btn {
           font-size: 0.9rem;
         }
 
-        /* ─ Footer ─ */
         footer {
           padding: 44px 16px 24px;
         }
-
         .footer-nav {
           gap: 10px 18px;
         }
-
         .footer-contact-info {
           flex-direction: column;
           gap: 8px;
         }
-
         .footer-credit {
           font-size: 0.72rem;
         }
 
-        /* ─ Counter stats ─ */
         .counter-value {
           font-size: 1.65rem;
         }
-
         .counter-label {
           font-size: 0.62rem;
         }
       }
 
-      /* ── 5. XS: Very small phones ≤ 360px ───────────────────── */
       @media (max-width: 360px) {
         :root {
           --nav-h: 56px;
@@ -2608,139 +2846,109 @@
         .hero {
           padding: 72px 12px 40px;
         }
-
         .hero-name {
           font-size: clamp(2.2rem, 17vw, 3rem);
           letter-spacing: 1px;
         }
-
         .hero-eyebrow {
           font-size: 0.65rem;
           letter-spacing: 3px;
         }
-
         .hero-img {
           max-width: 190px;
           width: 190px;
           height: auto;
         }
-
         .hero-img-placeholder {
           width: 190px;
           height: 235px;
         }
-
-        /* Stack the stats counter vertically — avoids squeeze */
         .hero-counters {
           flex-direction: column;
         }
-
         .counter-item + .counter-item {
           border-left: none;
           border-top: 1px solid var(--border);
         }
-
         .counter-value {
           font-size: 1.45rem;
         }
-
         .counter-label {
           font-size: 0.58rem;
         }
 
-        /* Section titles */
         .section-title {
           font-size: clamp(1.85rem, 10vw, 2.4rem);
         }
 
-        /* Skills */
         .skills-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 14px;
           max-width: 240px;
           margin: 0 auto;
         }
-
         .progress-ring-wrap,
         .progress-ring-wrap svg {
           width: 84px;
           height: 84px;
         }
-
         .skill-icon-wrap {
           width: 56px;
           height: 56px;
         }
-
         .skill-icon-wrap img {
           width: 34px;
           height: 34px;
         }
 
-        /* Portfolio — single column on tiny screens */
         .portfolio-grid {
           grid-template-columns: 1fr;
           gap: 12px;
         }
-
-        /* Team — full width cards */
         .team-card {
           width: 100%;
         }
-
         .team-name {
           font-size: 1rem;
         }
 
-        /* Buttons */
         .btn {
           padding: 11px 18px;
           font-size: 0.82rem;
         }
-
-        /* Filter pills */
         .portfolio-filter {
           gap: 6px;
         }
-
         .filter-pill {
           padding: 6px 11px;
           font-size: 0.72rem;
         }
-
         .footer-nav {
           gap: 10px;
         }
       }
 
-      /* ── 6. LANDSCAPE PHONES (height < 500px) ───────────────── */
       @media (max-height: 500px) and (orientation: landscape) {
         .hero {
           min-height: auto;
           padding: calc(var(--nav-h) + 16px) var(--section-px) 32px;
         }
-
-        /* Restore side-by-side layout in landscape */
         .hero-container {
           flex-direction: row;
           text-align: left;
           gap: 24px;
           align-items: flex-start;
         }
-
         .hero-left {
           order: 1;
           align-items: flex-start;
         }
-
         .hero-right {
           order: 2;
         }
-
         .hero-eyebrow {
           justify-content: flex-start;
         }
-
         .hero-tagline {
           border-left: 2px solid var(--primary);
           border-top: none;
@@ -2748,43 +2956,34 @@
           padding-top: 0;
           text-align: left;
         }
-
         .hero-buttons {
           flex-direction: row;
           justify-content: flex-start;
         }
-
         .hero-buttons .btn {
           width: auto;
         }
-
         .hero-socials {
           justify-content: flex-start;
         }
-
         .hero-img {
           max-width: 180px;
           width: 180px;
           height: auto;
         }
-
         .hero-img-placeholder {
           width: 180px;
           height: 220px;
         }
-
         .hero-counters {
           max-width: 360px;
         }
-
         .hero-scroll {
           display: none;
         }
       }
 
-      /* ── 7. TOUCH DEVICES — remove hover side-effects ───────── */
       @media (hover: none) and (pointer: coarse) {
-        /* Remove translateY/scale transforms that feel broken on touch */
         .service-card:hover,
         .team-card:hover,
         .video-card:hover,
@@ -2794,30 +2993,26 @@
         .view-more-btn:hover,
         .footer-socials a:hover,
         .drawer-socials a:hover,
-        .brand-item:hover {
+        .brand-item:hover,
+        .case-card:hover,
+        .testimonial-card:hover {
           transform: none;
           box-shadow: none;
         }
-
-        /* Always show video label — no hover available */
         .video-card .video-label {
           opacity: 1;
         }
-
-        /* Keep the top-border animation reset on service cards */
         .service-card:hover::before {
           transform: scaleX(0);
         }
       }
 
-      /* ── 8. HIGH-DPI / RETINA ────────────────────────────────── */
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .hero-badge {
           box-shadow: 0 6px 18px rgba(255, 89, 0, 0.4);
         }
       }
 
-      /* ── 9. PRINT ─────────────────────────────────────────────── */
       @media print {
         .navbar,
         .mobile-drawer,
@@ -2827,21 +3022,754 @@
         .brands {
           display: none !important;
         }
-
         body {
           background: white;
           color: black;
         }
-
         section {
           padding: 20px 16px;
           break-inside: avoid;
         }
-
         .hero {
           min-height: auto;
         }
       }
+      /* ══ HERO WITH 16:9 BACKGROUND VIDEO ═══════════════════════ */
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--nav-h) + 40px) var(--section-px) 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── BACKGROUND VIDEO ─── */
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  filter: brightness(0.4) saturate(1.1);
+}
+
+/* Dark overlay for text readability */
+.hero-bg-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index:  -1;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+/* Floating orange glow effects (kept for atmosphere) */
+.hero-bg-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-bg-glow::before {
+  content: "";
+  position: absolute;
+  width: min(800px, 140vw);
+  height: min(800px, 140vw);
+  background: radial-gradient(
+    circle,
+    rgba(255, 89, 0, 0.12) 0%,
+    transparent 65%
+  );
+  top: -250px;
+  right: -150px;
+  animation: floatOrb 9s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.hero-bg-glow::after {
+  content: "";
+  position: absolute;
+  width: min(500px, 90vw);
+  height: min(500px, 90vw);
+  background: radial-gradient(
+    circle,
+    rgba(255, 89, 0, 0.07) 0%,
+    transparent 70%
+  );
+  bottom: -100px;
+  left: 50px;
+  animation: floatOrb 12s ease-in-out infinite alternate-reverse;
+  will-change: transform;
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(50px, 35px) scale(1.12);
+  }
+}
+
+.hero-scanline {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.03) 3px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: var(--primary);
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8.5vw, 6.5rem);
+  letter-spacing: 4px;
+  line-height: 0.9;
+  margin-bottom: 16px;
+  background: linear-gradient(
+    135deg,
+    #ffffff 45%,
+    rgba(255, 89, 0, 0.75)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-title {
+  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+}
+
+.hero-title strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.hero-tagline {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.93rem;
+  margin-bottom: 32px;
+  line-height: 1.85;
+  max-width: 480px;
+  border-left: 2px solid var(--primary);
+  padding-left: 18px;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-socials a {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--light-gray);
+  transition: var(--transition);
+}
+
+.hero-socials a:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-3px);
+  background: rgba(255, 89, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(255, 89, 0, 0.2);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+}
+
+.hero-counters {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.3);
+  max-width: 420px;
+}
+
+.counter-item {
+  flex: 1;
+  padding: 18px 16px;
+  text-align: center;
+}
+
+.counter-item + .counter-item {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.counter-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.counter-label {
+  font-size: 0.68rem;
+  color: var(--light-gray);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 89, 0, 0.6),
+    transparent
+  );
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.1);
+  }
+}
+
+/* ─── Optional: Aayush profile image (smaller, floating) ─── */
+.hero-profile-floating {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-profile-img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 60px rgba(255, 89, 0, 0.25);
+  display: block;
+  background: #0a0a0a;
+}
+
+.hero-profile-badge {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 26px rgba(255, 89, 0, 0.45);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+/* ══ CLEAN HERO WITH SMART VIDEO CROPPING ══ */
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--nav-h) + 40px) var(--section-px) 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Single Background Video ─── */
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  filter: brightness(0.4) saturate(1.1);
+}
+
+/* ─── Overlay ─── */
+.hero-bg-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+/* ─── Glow effects ─── */
+.hero-bg-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-bg-glow::before {
+  content: "";
+  position: absolute;
+  width: min(800px, 140vw);
+  height: min(800px, 140vw);
+  background: radial-gradient(
+    circle,
+    rgba(255, 89, 0, 0.1) 0%,
+    transparent 65%
+  );
+  top: -250px;
+  right: -150px;
+  animation: floatOrb 9s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.hero-bg-glow::after {
+  content: "";
+  position: absolute;
+  width: min(500px, 90vw);
+  height: min(500px, 90vw);
+  background: radial-gradient(
+    circle,
+    rgba(255, 89, 0, 0.06) 0%,
+    transparent 70%
+  );
+  bottom: -100px;
+  left: 50px;
+  animation: floatOrb 12s ease-in-out infinite alternate-reverse;
+  will-change: transform;
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(50px, 35px) scale(1.12);
+  }
+}
+
+.hero-scanline {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.02) 3px,
+    rgba(0, 0, 0, 0.02) 4px
+  );
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* ─── Text Styles ─── */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: var(--primary);
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8.5vw, 6.5rem);
+  letter-spacing: 4px;
+  line-height: 0.9;
+  margin-bottom: 16px;
+  background: linear-gradient(
+    135deg,
+    #ffffff 45%,
+    rgba(255, 89, 0, 0.75)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-title {
+  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+}
+
+.hero-title strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.hero-tagline {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.93rem;
+  margin-bottom: 32px;
+  line-height: 1.85;
+  max-width: 480px;
+  border-left: 2px solid var(--primary);
+  padding-left: 18px;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-socials a {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--light-gray);
+  transition: var(--transition);
+}
+
+.hero-socials a:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-3px);
+  background: rgba(255, 89, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(255, 89, 0, 0.2);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+}
+
+.hero-counters {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.3);
+  max-width: 420px;
+}
+
+.counter-item {
+  flex: 1;
+  padding: 18px 16px;
+  text-align: center;
+}
+
+.counter-item + .counter-item {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.counter-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.counter-label {
+  font-size: 0.68rem;
+  color: var(--light-gray);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 89, 0, 0.6),
+    transparent
+  );
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.1);
+  }
+}
+
+/* ═══ RESPONSIVE: Mobile ═══ */
+@media (max-width: 767px) {
+  .hero {
+    padding: calc(var(--nav-h) + 20px) var(--section-px) 40px;
+    min-height: 100dvh;
+  }
+
+  /* Smart crop: focus on center of video */
+  .hero-bg-video {
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  .hero-bg-video-overlay {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+  }
+
+  .hero-container {
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+  }
+
+  .hero-left {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-right {
+    display: none; /* Hide the right side completely on mobile */
+  }
+
+  .hero-name {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+
+  .hero-tagline {
+    border-left: none;
+    border-top: 2px solid var(--primary);
+    padding-left: 0;
+    padding-top: 14px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-eyebrow {
+    justify-content: center;
+  }
+
+  .hero-socials {
+    justify-content: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-counters {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .counter-item {
+    padding: 12px 10px;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: calc(var(--nav-h) + 14px) 16px 32px;
+  }
+
+  .hero-name {
+    font-size: clamp(2.4rem, 14vw, 3.2rem);
+  }
+
+  .hero-title {
+    font-size: 0.9rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.85rem;
+  }
+
+  .counter-value {
+    font-size: 1.5rem;
+  }
+
+  .counter-label {
+    font-size: 0.6rem;
+  }
+}
     </style>
   </head>
 
@@ -2873,6 +3801,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#brands">Brands</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -2945,44 +3875,42 @@
 
       <nav class="mobile-nav-links" aria-label="Mobile navigation">
         <a href="#home" class="active" aria-current="page">
-          <span class="nav-icon"
-            ><i class="fas fa-house" aria-hidden="true"></i
-          ></span>
+          <span class="nav-icon"><i class="fas fa-house" aria-hidden="true"></i></span>
           <span class="nav-label">Home</span>
           <i class="fas fa-chevron-right nav-arrow" aria-hidden="true"></i>
         </a>
         <a href="#services">
-          <span class="nav-icon"
-            ><i class="fas fa-video" aria-hidden="true"></i
-          ></span>
+          <span class="nav-icon"><i class="fas fa-video" aria-hidden="true"></i></span>
           <span class="nav-label">Services</span>
           <i class="fas fa-chevron-right nav-arrow" aria-hidden="true"></i>
         </a>
         <a href="#about">
-          <span class="nav-icon"
-            ><i class="fas fa-user" aria-hidden="true"></i
-          ></span>
+          <span class="nav-icon"><i class="fas fa-user" aria-hidden="true"></i></span>
           <span class="nav-label">About</span>
           <i class="fas fa-chevron-right nav-arrow" aria-hidden="true"></i>
         </a>
         <a href="#brands">
-          <span class="nav-icon"
-            ><i class="fas fa-star" aria-hidden="true"></i
-          ></span>
+          <span class="nav-icon"><i class="fas fa-star" aria-hidden="true"></i></span>
           <span class="nav-label">Brands</span>
           <i class="fas fa-chevron-right nav-arrow" aria-hidden="true"></i>
         </a>
         <a href="#portfolio">
-          <span class="nav-icon"
-            ><i class="fas fa-film" aria-hidden="true"></i
-          ></span>
+          <span class="nav-icon"><i class="fas fa-film" aria-hidden="true"></i></span>
           <span class="nav-label">Portfolio</span>
           <i class="fas fa-chevron-right nav-arrow" aria-hidden="true"></i>
         </a>
+        <a href="#testimonials">
+          <span class="nav-icon"><i class="fas fa-quote-right" aria-hidden="true"></i></span>
+          <span class="nav-label">Testimonials</span>
+          <i class="fas fa-chevron-right nav-arrow" aria-hidden="true"></i>
+        </a>
+        <a href="#faq">
+          <span class="nav-icon"><i class="fas fa-circle-question" aria-hidden="true"></i></span>
+          <span class="nav-label">FAQ</span>
+          <i class="fas fa-chevron-right nav-arrow" aria-hidden="true"></i>
+        </a>
         <a href="#contact">
-          <span class="nav-icon"
-            ><i class="fas fa-paper-plane" aria-hidden="true"></i
-          ></span>
+          <span class="nav-icon"><i class="fas fa-paper-plane" aria-hidden="true"></i></span>
           <span class="nav-label">Contact</span>
           <i class="fas fa-chevron-right nav-arrow" aria-hidden="true"></i>
         </a>
@@ -3022,7 +3950,7 @@
             rel="noopener noreferrer"
             class="drawer-hire-btn"
           >
-            <i class="fab fa-whatsapp" aria-hidden="true"></i> Hire Me
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Hire Us
           </a>
         </div>
       </div>
@@ -3030,8 +3958,25 @@
 
     <main id="main-content">
       <!-- HERO -->
+      <!-- HERO WITH 16:9 BACKGROUND VIDEO -->
+      <!-- HERO WITH SINGLE VIDEO (Smart Cropping) -->
       <section class="hero" id="home" aria-label="Introduction">
-        <div class="hero-bg" aria-hidden="true"></div>
+        <!-- BACKGROUND VIDEO -->
+        <video
+          class="hero-bg-video"
+          src="thinkvisual-intro.mp4"
+          poster="your-poster.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+          aria-hidden="true"
+          onerror="this.style.display = 'none';"
+        ></video>
+
+        <!-- OVERLAYS -->
+        <div class="hero-bg-video-overlay" aria-hidden="true"></div>
+        <div class="hero-bg-glow" aria-hidden="true"></div>
         <div class="hero-scanline" aria-hidden="true"></div>
 
         <div class="hero-container">
@@ -3039,7 +3984,7 @@
             <p class="hero-eyebrow" aria-hidden="true">
               Founded by Aayush Sharma
             </p>
-            <h1 class="hero-name">THink<br />Visual</h1>
+            <h1 class="hero-name">Think<br />Visual</h1>
             <p class="hero-title">
               <strong>Video Editing, Digital Marketing</strong> &amp;
               <strong>Web Development</strong>
@@ -3103,48 +4048,14 @@
             </dl>
           </div>
 
-          <div class="hero-right">
-            <div class="hero-image-wrapper">
-              <img
-                src="aayush-img.jpg"
-                alt="Aayush Sharma"
-                class="hero-img"
-                loading="eager"
-                fetchpriority="high"
-                onerror="
-                  this.style.display = 'none';
-                  document.getElementById('hero-placeholder').style.display =
-                    'flex';
-                "
-              />
-              <div
-                class="hero-img-placeholder"
-                id="hero-placeholder"
-                style="display: none"
-                aria-hidden="true"
-              >
-                <i class="fas fa-user-circle"></i>
-                <p>Aayush Sharma</p>
-              </div>
-              <div class="hero-badge" aria-label="Available for work">
-                <i
-                  class="fas fa-circle"
-                  style="font-size: 0.5rem; color: #4ade80"
-                  aria-hidden="true"
-                ></i>
-                Available for Work
-              </div>
-            </div>
-          </div>
+          <div class="hero-right" style="display: none;"></div>
         </div>
 
         <div class="hero-scroll" aria-hidden="true">
           <div class="hero-scroll-line"></div>
           <span>Scroll</span>
         </div>
-      </section>
-
-      <!-- SERVICES -->
+      </section>      <!-- SERVICES -->
       <section
         class="services"
         id="services"
@@ -3252,43 +4163,34 @@
         </div>
       </section>
 
-      <!-- ABOUT -->
+      <!-- ABOUT (Enhanced Agency Version) -->
       <section class="about" id="about" aria-labelledby="about-heading">
         <div class="about-inner">
           <div class="about-text-col reveal">
             <span class="section-tag">Who We Are</span>
-            <h2 class="section-title" id="about-heading">About Us</h2>
+            <h2 class="section-title" id="about-heading">A Full-Service Creative Agency</h2>
             <div class="divider left" aria-hidden="true"></div>
             <br />
             <p class="about-body">
-              We are passionate video editor and web developer with a love for
-              storytelling and visual creativity. From fast-paced reels and
-              cinematic music videos to VFX-heavy edits and responsive websites
-              — I bring ideas to life through engaging visuals and digital
-              experiences.
+              <strong>Think Visual</strong> is a creative agency founded by <strong>Aayush Sharma</strong> — a passionate video editor, web developer, and storyteller with over 3 years of experience crafting visuals that drive results. We're a team of dedicated creatives who believe in the power of visual storytelling to transform brands and businesses.
             </p>
             <p class="about-body">
-              We run
-              <strong style="color: var(--primary)">Think Visual</strong>, where
-              we craft powerful edits, stunning designs, and functional websites
-              that help brands, creators, and businesses stand out in a crowded
-              digital space. Our work blends emotion, rhythm, and creativity to
-              make every frame and every pixel count.
+              Our agency brings together <strong>video editing, motion graphics, web development, and digital marketing</strong> under one roof. From cinematic music videos and VFX-heavy edits to responsive websites and data-driven ad campaigns — we deliver end-to-end solutions that help our clients stand out in a crowded digital landscape.
             </p>
             <p class="about-body">
-              We believe in quality, fast communication, and always pushing the
-              visual limits. Whether you're launching a new product, building
-              your brand, need scroll-stopping content, or want a custom website
-              — We are here to make it happen.
+              <strong>Agency Credentials:</strong> We've worked with <strong>30+ clients</strong> across industries, completed <strong>100+ projects</strong>, and partnered with brands like <strong>Tata Archery, Detailing Mafia, Radio City, and Ramsy</strong>. Our work is driven by creativity, precision, and a commitment to delivering measurable impact.
+            </p>
+            <p class="about-body">
+              <strong>Our Promise:</strong> We meet deadlines, communicate clearly, and obsess over quality. Whether you're launching a brand, building a website, or scaling your social presence — we're here to make it happen.
             </p>
             <a
               href="https://api.whatsapp.com/send/?phone=917909010519"
               target="_blank"
               rel="noopener noreferrer"
               class="btn orange"
-              aria-label="Hire Aayush via WhatsApp"
+              aria-label="Hire Think Visual via WhatsApp"
             >
-              <i class="fab fa-whatsapp" aria-hidden="true"></i> Hire Me
+              <i class="fab fa-whatsapp" aria-hidden="true"></i> Work With Us
             </a>
           </div>
 
@@ -3514,7 +4416,7 @@
       </section>
 
       <!-- TEAM -->
-      <section class="team" id="team" aria-labelledby="team-heading">
+      <section class="about" id="about" aria-labelledby="about-heading">
         <div class="section-header reveal">
           <span class="section-tag">The People</span>
           <h2 class="section-title" id="team-heading">Meet The Team</h2>
@@ -3551,6 +4453,22 @@
             <p class="team-role">Graphic Designer</p>
             <p class="team-exp">
               2+ years · Illustrator, Photoshop &amp; Canva
+            </p>
+          </div>
+          <div class="team-card reveal">
+            <img
+              class="team-pfp"
+              src="kanha-img.png"
+              alt="Kanha Sharma"
+              onerror="
+                this.style.background = '#222';
+                this.src = '';
+              "
+            />
+            <h3 class="team-name">Kanha Sharma</h3>
+            <p class="team-role">Web Developer</p>
+            <p class="team-exp">
+              3+ years · HTML, CSS, JS, Backend &amp; Database
             </p>
           </div>
           <div class="team-card reveal">
@@ -3664,6 +4582,17 @@
               </div>
               <div class="brand-name">Radio City</div>
             </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <img
+                  class="brand-pfp"
+                  src="https://scontent.fdel27-9.fna.fbcdn.net/v/t39.30808-6/628159535_840442959016576_7083143659009130550_n.jpg?stp=dst-jpg_tt6&cstp=mx1083x1083&ctp=s1083x1083&_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=_8Zfumh1lAMQ7kNvwGzx7EU&_nc_oc=AdqJJgeuhZc9EqgqWxPcxF_QwWpNWBpoPdmJy3hbBrFW35ldBajXWAxNPBao8IQglJ2-24mm68ErmDGyTvLyP27_&_nc_zt=23&_nc_ht=scontent.fdel27-9.fna&_nc_gid=6bHvFjylHQ-pp6uYy-KdlQ&_nc_ss=7b289&oh=00_Af_ZGF3ZnvOphFOiObaQwYp9A5GDhhV_H-62dKN4XgXWfA&oe=6A44326A"
+                  alt="Radio City"
+                />
+              </div>
+              <div class="brand-name">Khana Drama</div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -3684,24 +4613,22 @@
         </div>
 
         <div id="portfolio-grid" class="portfolio-grid" role="list">
-          <!-- Automotive -->
           <div
             class="video-card reveal reveal-delay-1"
             role="listitem"
             data-category="automotive"
           >
             <video
-              src="FORTUNER PPF ENHANCED 2.mp4"
-              poster="FORTUNER PPF ENHANCED 2.png"
+              src="Blue BMW X3 PPF.mp4"
+              poster="BMWX3.png"
               controls
               preload="none"
               playsinline
               aria-label="Audi PPF"
             ></video>
-            <div class="video-label">Audi PPF 01</div>
+            <div class="video-label">BMW X3</div>
           </div>
 
-          <!-- Events -->
           <div
             class="video-card reveal reveal-delay-2"
             role="listitem"
@@ -3718,7 +4645,6 @@
             <div class="video-label">Avhinash 1080 Linked Comp 03</div>
           </div>
 
-          <!-- Cinematic -->
           <div
             class="video-card reveal reveal-delay-3"
             role="listitem"
@@ -3730,12 +4656,11 @@
               controls
               preload="none"
               playsinline
-              aria-label="Khana Drama Final Video"
+              aria-label="Archery Edit"
             ></video>
-            <div class="video-label">Khana Drama Final Video</div>
+            <div class="video-label">Khana Drama Edit</div>
           </div>
 
-          <!-- VFX -->
           <div
             class="video-card reveal reveal-delay-4"
             role="listitem"
@@ -3749,7 +4674,71 @@
               playsinline
               aria-label="Vikas Vidyalaya Reel"
             ></video>
-            <div class="video-label">Vikas Vidyalaya Reel</div>
+            <div class="video-label">Dandiya Night reel</div>
+          </div>
+          <div
+            class="video-card reveal reveal-delay-4"
+            role="listitem"
+            data-category="vfx"
+          >
+            <video
+              src="JRD TATA EDIT 01.mp4"
+              poster="JRD TATA.png"
+              controls
+              preload="none"
+              style="aspect-ratio: 16/9;"
+              playsinline
+              aria-label="Vikas Vidyalaya Reel"
+            ></video>
+            <div class="video-label">JRD Tata Edit</div>
+          </div>
+          <div
+            class="video-card reveal reveal-delay-4"
+            role="listitem"
+            data-category="vfx"
+          >
+            <video
+              src="Piyush Greh Pravesh Linked Comp 04_1.mp4"
+              poster="Piyush Greh.png"
+              controls
+              preload="none"
+              playsinline
+              style="aspect-ratio: 16/9;"
+              aria-label="Vikas Vidyalaya Reel"
+            ></video>
+            <div class="video-label">Piyush Greh Prevesh</div>
+          </div>
+          <div
+            class="video-card reveal reveal-delay-4"
+            role="listitem"
+            data-category="vfx"
+          >
+            <video
+              src="Wedding invitation.mp4"
+              poster="Weeding.png"
+              controls
+              preload="none"
+              playsinline
+              style="aspect-ratio: 16/9;"
+              aria-label="Vikas Vidyalaya Reel"
+            ></video>
+            <div class="video-label">Wedding Invitation</div>
+          </div>
+          <div
+            class="video-card reveal reveal-delay-4"
+            role="listitem"
+            data-category="vfx"
+          >
+            <video
+              src="WB 10.mp4"
+              poster="WB.png"
+              controls
+              style="aspect-ratio: 16/9;"
+              preload="none"
+              playsinline
+              aria-label="Vikas Vidyalaya Reel"
+            ></video>
+            <div class="video-label">West Bengal Gov. Work </div>
           </div>
         </div>
 
@@ -3768,90 +4757,267 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
-      <section class="contact" id="contact" aria-labelledby="contact-heading">
+
+      <!-- TESTIMONIALS (New) -->
+      <section class="testimonials" id="testimonials" aria-labelledby="testimonial-heading">
         <div class="section-header reveal">
-          <span class="section-tag">Let's Talk</span>
-          <h2 class="section-title" id="contact-heading">Contact Me</h2>
+          <span class="section-tag">Client Voices</span>
+          <h2 class="section-title" id="testimonial-heading">Testimonials</h2>
           <div class="divider" aria-hidden="true"></div>
           <p class="section-subtitle" style="margin-top: 18px">
-            Have a project in mind? I'd love to hear about it.
+            What our clients say about working with us
           </p>
         </div>
 
-        <form
-          class="contact-form reveal"
-          action="https://formsubmit.co/aayush12ab@gmail.com"
-          method="POST"
-          id="contact-form"
-          aria-label="Contact form"
-          novalidate
-        >
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-          <input
-            type="text"
-            name="_honey"
-            style="display: none"
-            tabindex="-1"
-            aria-hidden="true"
-          />
+        <div class="testimonials-grid">
+          <div class="testimonial-card reveal reveal-delay-1">
+            <div class="quote-icon" aria-hidden="true">"</div>
+            <blockquote>
+              "Aayush’s branding edits are insane! He went SO crazy with the effects that our brand is literally everywhere in the video. The edit is loud, proud, and exactly the 'Drama' we wanted!"
+            </blockquote>
+            <div class="client-info">
+              <img
+                class="client-avatar" style="background-color: white;"
+                src="https://cdn.prod.website-files.com/68c167650fc527db8707bd1d/69abfd59cdc09ce8b837e528_Untitled%20(4500%20x%204500%20px)%20DM-p-2000.png"
+                alt="Detailing Mafia"
+                loading="lazy"
+              />
+              <div>
+                <div class="client-name">Detailing Mafia</div>
+                <div class="client-rating">★★★★★</div>
+              </div>
+            </div>
+          </div>
 
-          <div class="form-row">
-            <div>
-              <label for="name" class="sr-only">Your Name</label>
+          <div class="testimonial-card reveal reveal-delay-2">
+            <div class="quote-icon" aria-hidden="true">"</div>
+            <blockquote>
+              "Best PPF edits in the game! Aayush’s visual eye for car modifications is top-tier. He makes the gloss look unreal and nails every single detailing shot."
+            </blockquote>
+            <div class="client-info">
+              <img
+                class="client-avatar"
+                src="https://scontent.fdel27-9.fna.fbcdn.net/v/t39.30808-6/628159535_840442959016576_7083143659009130550_n.jpg?stp=dst-jpg_tt6&cstp=mx1083x1083&ctp=s1083x1083&_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=_8Zfumh1lAMQ7kNvwGzx7EU&_nc_oc=AdqJJgeuhZc9EqgqWxPcxF_QwWpNWBpoPdmJy3hbBrFW35ldBajXWAxNPBao8IQglJ2-24mm68ErmDGyTvLyP27_&_nc_zt=23&_nc_ht=scontent.fdel27-9.fna&_nc_gid=6bHvFjylHQ-pp6uYy-KdlQ&_nc_ss=7b289&oh=00_Af_ZGF3ZnvOphFOiObaQwYp9A5GDhhV_H-62dKN4XgXWfA&oe=6A44326A"
+                alt="Shreya Gupta"
+                loading="lazy"
+              />
+              <div>
+                <div class="client-name">Khana Drama</div>
+                <div class="client-rating">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal-delay-3">
+            <div class="quote-icon" aria-hidden="true">"</div>
+            <blockquote>
+              "Huge shoutout to Aayush for creating a spectacular edit for my Griha Pravesh. He captured the vibe, the rituals, and the party perfectly. A truly great edit for a special day."
+            </blockquote>
+            <div class="client-info">
+              <img
+                class="client-avatar"
+                src="https://ui-avatars.com/api/?name=Piyush+Mehta&background=ff5900&color=fff&size=48"
+                alt="Raj Mehta"
+                loading="lazy"
+              />
+              <div>
+                <div class="client-name">Piyush Mehta</div>
+                <div class="client-rating">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ (New) -->
+      <section class="faq" id="faq" aria-labelledby="faq-heading">
+        <div class="section-header reveal">
+          <span class="section-tag">Questions?</span>
+          <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+          <div class="divider" aria-hidden="true"></div>
+          <p class="section-subtitle" style="margin-top: 18px">
+            Everything you need to know before working with us
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="true">
+              What services do you offer?
+              <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                We offer a full suite of creative services including <strong>video editing, motion graphics, color grading, web development, responsive design, digital marketing, social media management, and poster design</strong>. Whatever your creative need, we've got you covered.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              How much do your services cost?
+              <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                We offer flexible pricing based on project scope and requirements. For pricing <strong>Contact us</strong> for a custom quote tailored to your needs.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              What's the typical turnaround time?
+              <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Turnaround times vary by project complexity. Simple video edits typically take <strong>2-3 days</strong>, while comprehensive websites and campaigns can take <strong>2-4 weeks</strong>. We prioritize clear communication and always work with realistic deadlines.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              Can I see examples of your work?
+              <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes! Browse our <a href="https://thinkvisual.in/portfolio" style="color: var(--primary); text-decoration: underline;">Portfolio</a> section for a curated selection of our best work. We're also happy to share more examples upon request.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT (Enhanced) -->
+      <section class="contact" id="contact" aria-labelledby="contact-heading">
+        <div class="section-header reveal">
+          <span class="section-tag">Let's Talk</span>
+          <h2 class="section-title" id="contact-heading">Get in Touch</h2>
+          <div class="divider" aria-hidden="true"></div>
+          <br>
+          <p class="section-subtitle" >
+            Have a project in mind? We'd love to hear about it. Reach out and let's create something amazing together.
+          </p>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-info-col reveal">
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="method-icon"><i class="fas fa-envelope"></i></div>
+                <div class="method-content">
+                  <h4>Email</h4>
+                  <p><a href="mailto:aayush12ab@gmail.com">aayush12ab@gmail.com</a></p>
+                  <span class="method-response">Response within 24 hours</span>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="method-icon"><i class="fab fa-whatsapp"></i></div>
+                <div class="method-content">
+                  <h4>WhatsApp</h4>
+                  <p><a href="https://api.whatsapp.com/send/?phone=917909010519" target="_blank" rel="noopener noreferrer">+91 79090 10519</a></p>
+                  <span class="method-response">Response within 2 hours</span>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="method-icon"><i class="fas fa-clock"></i></div>
+                <div class="method-content">
+                  <h4>Business Hours</h4>
+                  <p>Mon-Sun: 10:00 AM - 10:00 PM IST</p>
+                  <span class="method-response">Available for urgent requests</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border);">
+              <p style="font-size: 0.8rem; color: var(--light-gray);">
+                <i class="fas fa-shield-alt" style="color: var(--primary); margin-right: 6px;"></i>
+                Your information is safe with us. We'll never share your data.
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-form-col reveal reveal-delay-2">
+            <form
+              class="contact-form"
+              action="https://formsubmit.co/aayush12ab@gmail.com"
+              method="POST"
+              id="contact-form"
+              aria-label="Contact form"
+              novalidate
+            >
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
               <input
                 type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="Your Name"
-                autocomplete="name"
-                aria-required="true"
+                name="_honey"
+                style="display: none"
+                tabindex="-1"
+                aria-hidden="true"
               />
-            </div>
-            <div>
-              <label for="email" class="sr-only">Your Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="Your Email"
-                autocomplete="email"
-                aria-required="true"
-              />
-            </div>
-          </div>
-          <div>
-            <label for="contact-phone" class="sr-only">Phone Number</label>
-            <input
-              type="tel"
-              id="contact-phone"
-              name="contact"
-              placeholder="Phone Number (optional)"
-              autocomplete="tel"
-              pattern="[0-9+\-\s()]{7,20}"
-            />
-          </div>
-          <div>
-            <label for="message" class="sr-only">Your Message</label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              placeholder="Tell me about your project..."
-              aria-required="true"
-            ></textarea>
-          </div>
 
-          <button type="submit" class="btn orange" id="submit-btn">
-            <i class="fas fa-paper-plane" aria-hidden="true"></i>
-            <span id="submit-text">Send Message</span>
-          </button>
+              <div class="form-row">
+                <div>
+                  <label for="name" class="sr-only">Your Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Your Name"
+                    autocomplete="name"
+                    aria-required="true"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="sr-only">Your Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="Your Email"
+                    autocomplete="email"
+                    aria-required="true"
+                  />
+                </div>
+              </div>
+              <div>
+                <label for="contact-phone" class="sr-only">Phone Number</label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  name="contact"
+                  placeholder="Phone Number (optional)"
+                  autocomplete="tel"
+                  pattern="[0-9+\-\s()]{7,20}"
+                />
+              </div>
+              <div>
+                <label for="message" class="sr-only">Your Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Tell me about your project..."
+                  aria-required="true"
+                ></textarea>
+              </div>
 
-          <div id="form-status" role="alert" aria-live="polite"></div>
-        </form>
+              <button type="submit" class="btn orange" id="submit-btn">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                <span id="submit-text">Send Message</span>
+              </button>
+
+              <div id="form-status" role="alert" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -3873,13 +5039,16 @@
               THINK<span>.</span>VISUAL
             </div>
           </a>
+          <p class="footer-tagline">Creative Agency — Video, Web &amp; Digital</p>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="#home">Home</a>
+          <a href="#home" class="active" aria-current="page">Home</a></li>
           <a href="#services">Services</a>
           <a href="#about">About</a>
           <a href="#brands">Brands</a>
           <a href="#portfolio">Portfolio</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
         </nav>
         <div class="footer-socials" aria-label="Social media">
@@ -4141,6 +5310,22 @@
         brandsTrack.innerHTML += origHTML;
       }
 
+      // FAQ accordion
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        const question = item.querySelector(".faq-question");
+        question.addEventListener("click", () => {
+          const isActive = item.classList.contains("active");
+          document.querySelectorAll(".faq-item").forEach((i) => {
+            i.classList.remove("active");
+            i.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+          });
+          if (!isActive) {
+            item.classList.add("active");
+            item.querySelector(".faq-question").setAttribute("aria-expanded", "true");
+          }
+        });
+      });
+
       // Contact form
       const contactForm = document.getElementById("contact-form");
       const submitBtn = document.getElementById("submit-btn");
@@ -4176,7 +5361,7 @@
               headers: { Accept: "application/json" },
             });
             if (res.ok) {
-              showStatus("Message sent! I'll get back to you soon.", "success");
+              showStatus("Message sent! We'll get back to you soon.", "success");
               contactForm.reset();
             } else {
               throw new Error("server error");
