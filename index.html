@@ -18,7 +18,8 @@
       content="Think Visual, Video Editing, Motion Graphics, Web Development, Digital Marketing, Color Grading, Social Media Management, Reels Editing, Cinematic Edits, Brand Storytelling, Aayush Sharma, Creative Agency"
     />
     <meta name="author" content="Think Visual" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://thinkvisual.in/" />
     <meta
       property="og:title"
       content="Think Visual — Video Editing, Web Development & Digital Marketing"
@@ -27,9 +28,12 @@
       property="og:description"
       content="Think Visual delivers cinematic edits, motion graphics, responsive web development, and data-driven digital marketing. Elevate your brand with creative visual storytelling."
     />
-    <meta property="og:url" content="https://thinkvisual.in" />
+    <meta property="og:url" content="https://thinkvisual.in/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Think Visual" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:image" content="https://thinkvisual.in/think-visual-logo.png" />
+    <meta property="og:image:alt" content="Think Visual — Video Editing, Web Development & Digital Marketing Agency" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -39,11 +43,14 @@
       name="twitter:description"
       content="Premium video editing, motion graphics, web development, and digital marketing for brands and creators."
     />
+    <meta name="twitter:image" content="https://thinkvisual.in/think-visual-logo.png" />
     <meta name="theme-color" content="#ff5900" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="logo.png" type="image/png" />
+    <link rel="icon" href="think-visual-logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="think-visual-logo.png" />
+    <link rel="manifest" href="site.webmanifest" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -3034,336 +3041,6 @@
           min-height: auto;
         }
       }
-      /* ══ HERO WITH 16:9 BACKGROUND VIDEO ═══════════════════════ */
-.hero {
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  padding: calc(var(--nav-h) + 40px) var(--section-px) 60px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* ─── BACKGROUND VIDEO ─── */
-.hero-bg-video {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-  filter: brightness(0.4) saturate(1.1);
-}
-
-/* Dark overlay for text readability */
-.hero-bg-video-overlay {
-  position: absolute;
-  inset: 0;
-  z-index:  -1;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.75) 100%
-  );
-  pointer-events: none;
-}
-
-/* Floating orange glow effects (kept for atmosphere) */
-.hero-bg-glow {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.hero-bg-glow::before {
-  content: "";
-  position: absolute;
-  width: min(800px, 140vw);
-  height: min(800px, 140vw);
-  background: radial-gradient(
-    circle,
-    rgba(255, 89, 0, 0.12) 0%,
-    transparent 65%
-  );
-  top: -250px;
-  right: -150px;
-  animation: floatOrb 9s ease-in-out infinite alternate;
-  will-change: transform;
-}
-
-.hero-bg-glow::after {
-  content: "";
-  position: absolute;
-  width: min(500px, 90vw);
-  height: min(500px, 90vw);
-  background: radial-gradient(
-    circle,
-    rgba(255, 89, 0, 0.07) 0%,
-    transparent 70%
-  );
-  bottom: -100px;
-  left: 50px;
-  animation: floatOrb 12s ease-in-out infinite alternate-reverse;
-  will-change: transform;
-}
-
-@keyframes floatOrb {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  100% {
-    transform: translate(50px, 35px) scale(1.12);
-  }
-}
-
-.hero-scanline {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 3px,
-    rgba(0, 0, 0, 0.03) 3px,
-    rgba(0, 0, 0, 0.03) 4px
-  );
-}
-
-.hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: clamp(32px, 5vw, 80px);
-  width: 100%;
-  position: relative;
-  z-index: 3;
-}
-
-.hero-left {
-  flex: 1;
-  max-width: 600px;
-}
-
-.hero-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--primary);
-  margin-bottom: 16px;
-}
-
-.hero-eyebrow::before {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 2px;
-  background: var(--primary);
-}
-
-.hero-name {
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 8.5vw, 6.5rem);
-  letter-spacing: 4px;
-  line-height: 0.9;
-  margin-bottom: 16px;
-  background: linear-gradient(
-    135deg,
-    #ffffff 45%,
-    rgba(255, 89, 0, 0.75)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.hero-title {
-  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.55);
-  margin-bottom: 22px;
-  letter-spacing: 0.5px;
-}
-
-.hero-title strong {
-  color: var(--primary);
-  font-weight: 600;
-}
-
-.hero-tagline {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.93rem;
-  margin-bottom: 32px;
-  line-height: 1.85;
-  max-width: 480px;
-  border-left: 2px solid var(--primary);
-  padding-left: 18px;
-}
-
-.hero-socials {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-}
-
-.hero-socials a {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  color: var(--light-gray);
-  transition: var(--transition);
-}
-
-.hero-socials a:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-  transform: translateY(-3px);
-  background: rgba(255, 89, 0, 0.15);
-  box-shadow: 0 8px 20px rgba(255, 89, 0, 0.2);
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 14px;
-  margin-bottom: 44px;
-  flex-wrap: wrap;
-}
-
-.hero-counters {
-  display: flex;
-  align-items: stretch;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  overflow: hidden;
-  backdrop-filter: blur(12px);
-  background: rgba(0, 0, 0, 0.3);
-  max-width: 420px;
-}
-
-.counter-item {
-  flex: 1;
-  padding: 18px 16px;
-  text-align: center;
-}
-
-.counter-item + .counter-item {
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.counter-value {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  letter-spacing: 1px;
-  color: var(--primary);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-
-.counter-label {
-  font-size: 0.68rem;
-  color: var(--light-gray);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-.hero-scroll {
-  position: absolute;
-  bottom: 36px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255, 255, 255, 0.25);
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  z-index: 3;
-}
-
-.hero-scroll-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 89, 0, 0.6),
-    transparent
-  );
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: scaleY(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scaleY(1.1);
-  }
-}
-
-/* ─── Optional: Aayush profile image (smaller, floating) ─── */
-.hero-profile-floating {
-  position: relative;
-  display: inline-block;
-}
-
-.hero-profile-img {
-  width: 100%;
-  max-width: 220px;
-  border-radius: 50%;
-  border: 3px solid var(--primary);
-  box-shadow: 0 0 60px rgba(255, 89, 0, 0.25);
-  display: block;
-  background: #0a0a0a;
-}
-
-.hero-profile-badge {
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--primary);
-  color: #000;
-  padding: 8px 16px;
-  border-radius: 100px;
-  font-weight: 700;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 8px 26px rgba(255, 89, 0, 0.45);
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
 /* ══ CLEAN HERO WITH SMART VIDEO CROPPING ══ */
 
 .hero {
@@ -3771,6 +3448,86 @@
   }
 }
     </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Think Visual",
+        "url": "https://thinkvisual.in/",
+        "logo": "https://thinkvisual.in/think-visual-logo.png",
+        "image": "https://thinkvisual.in/think-visual-logo.png",
+        "description": "Think Visual is a creative agency offering video editing, motion graphics, web development, and digital marketing services for brands and creators.",
+        "founder": {
+          "@type": "Person",
+          "name": "Aayush Sharma"
+        },
+        "email": "aayush12ab@gmail.com",
+        "telephone": "+91-7909010519",
+        "areaServed": "IN",
+        "sameAs": [
+          "https://www.instagram.com/think_.visual",
+          "https://www.linkedin.com/company/think-visuals/"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "3"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Think Visual",
+        "url": "https://thinkvisual.in/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://thinkvisual.in/portfolio.html?search={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What services do you offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We offer a full suite of creative services including video editing, motion graphics, color grading, web development, responsive design, digital marketing, social media management, and poster design."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much do your services cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We offer flexible pricing based on project scope and requirements. Contact us for a custom quote tailored to your needs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What's the typical turnaround time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Turnaround times vary by project complexity. Simple video edits typically take 2-3 days, while comprehensive websites and campaigns can take 2-4 weeks."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I see examples of your work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our full Portfolio page features a curated selection of our best video editing, web development, and design work."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>
@@ -3781,7 +3538,7 @@
       <div class="nav-progress" id="navProgress" aria-hidden="true"></div>
       <a href="#home" class="logo" aria-label="Think Visual — home">
         <img
-          src="logo.png"
+          src="think-visual-logo.png"
           alt="Think Visual logo"
           loading="eager"
           onerror="
@@ -3849,7 +3606,7 @@
           tabindex="-1"
         >
           <img
-            src="logo.png"
+            src="think-visual-logo.png"
             alt="Think Visual logo"
             onerror="
               this.style.display = 'none';
@@ -3964,8 +3721,7 @@
         <!-- BACKGROUND VIDEO -->
         <video
           class="hero-bg-video"
-          src="thinkvisual-intro.mp4"
-          poster="your-poster.jpg"
+          src="think-visual-intro-video.mp4"
           autoplay
           muted
           loop
@@ -4416,7 +4172,7 @@
       </section>
 
       <!-- TEAM -->
-      <section class="about" id="about" aria-labelledby="about-heading">
+      <section class="about" id="team" aria-labelledby="team-heading">
         <div class="section-header reveal">
           <span class="section-tag">The People</span>
           <h2 class="section-title" id="team-heading">Meet The Team</h2>
@@ -4426,7 +4182,7 @@
           <div class="team-card reveal">
             <img
               class="team-pfp"
-              src="aayush-img.jpg"
+              src="aayush-sharma-video-editor-think-visual.jpg"
               alt="Aayush Sharma"
               onerror="
                 this.style.background = '#222';
@@ -4442,7 +4198,7 @@
           <div class="team-card reveal">
             <img
               class="team-pfp"
-              src="rajeev-img.jpeg"
+              src="rajeev-sharma-graphic-designer-think-visual.jpeg"
               alt="Rajeev Sharma"
               onerror="
                 this.style.background = '#222';
@@ -4458,7 +4214,7 @@
           <div class="team-card reveal">
             <img
               class="team-pfp"
-              src="kanha-img.png"
+              src="kanha-sharma-web-developer-think-visual.png"
               alt="Kanha Sharma"
               onerror="
                 this.style.background = '#222';
@@ -4474,7 +4230,7 @@
           <div class="team-card reveal">
             <img
               class="team-pfp"
-              src="simran-img.jpeg"
+              src="simran-sharma-social-media-manager-think-visual.jpeg"
               alt="Simran Sharma"
               onerror="
                 this.style.background = '#222';
@@ -4619,14 +4375,14 @@
             data-category="automotive"
           >
             <video
-              src="Blue BMW X3 PPF.mp4"
-              poster="BMWX3.png"
+              src="bmw-x3-ppf-detailing-edit.mp4"
+              poster="bmw-x3-ppf-detailing-poster.png"
               controls
               preload="none"
               playsinline
-              aria-label="Audi PPF"
+              aria-label="BMW X3 paint protection film detailing video edit"
             ></video>
-            <div class="video-label">BMW X3</div>
+            <div class="video-label">BMW X3 PPF Detailing</div>
           </div>
 
           <div
@@ -4635,14 +4391,14 @@
             data-category="event"
           >
             <video
-              src="Avhinash 1080 Linked Comp 03.mp4"
-              poster="Avhinash 1080 Linked Comp 03.png"
+              src="avhinash-event-highlight-reel.mp4"
+              poster="avhinash-event-highlight-poster.png"
               controls
               preload="none"
               playsinline
-              aria-label="Avhinash 1080 Linked Comp 03"
+              aria-label="Avhinash event highlight video edit"
             ></video>
-            <div class="video-label">Avhinash 1080 Linked Comp 03</div>
+            <div class="video-label">Avhinash Event Highlights</div>
           </div>
 
           <div
@@ -4651,12 +4407,12 @@
             data-category="cinematic"
           >
             <video
-              src="Khana Drama Final Video enhanced 60 fps.mp4"
-              poster="Khana Drama Final Video enhanced 60 fps.png"
+              src="khana-drama-cinematic-edit.mp4"
+              poster="khana-drama-cinematic-poster.png"
               controls
               preload="none"
               playsinline
-              aria-label="Archery Edit"
+              aria-label="Khana Drama cinematic brand video edit"
             ></video>
             <div class="video-label">Khana Drama Edit</div>
           </div>
@@ -4667,14 +4423,14 @@
             data-category="vfx"
           >
             <video
-              src="Dandiya Night Rv No Logo.mp4"
-              poster="Dandiya Night Rv No Logo.png"
+              src="dandiya-night-event-reel.mp4"
+              poster="dandiya-night-event-poster.png"
               controls
               preload="none"
               playsinline
-              aria-label="Vikas Vidyalaya Reel"
+              aria-label="Dandiya Night event reel edit"
             ></video>
-            <div class="video-label">Dandiya Night reel</div>
+            <div class="video-label">Dandiya Night Reel</div>
           </div>
           <div
             class="video-card reveal reveal-delay-4"
@@ -4682,13 +4438,13 @@
             data-category="vfx"
           >
             <video
-              src="JRD TATA EDIT 01.mp4"
-              poster="JRD TATA.png"
+              src="jrd-tata-marathon-edit.mp4"
+              poster="jrd-tata-marathon-poster.png"
               controls
               preload="none"
               style="aspect-ratio: 16/9;"
               playsinline
-              aria-label="Vikas Vidyalaya Reel"
+              aria-label="JRD Tata Marathon promotional video edit"
             ></video>
             <div class="video-label">JRD Tata Edit</div>
           </div>
@@ -4698,15 +4454,15 @@
             data-category="vfx"
           >
             <video
-              src="Piyush Greh Pravesh Linked Comp 04_1.mp4"
-              poster="Piyush Greh.png"
+              src="piyush-griha-pravesh-event-edit.mp4"
+              poster="piyush-griha-pravesh-poster.png"
               controls
               preload="none"
               playsinline
               style="aspect-ratio: 16/9;"
-              aria-label="Vikas Vidyalaya Reel"
+              aria-label="Piyush Griha Pravesh housewarming ceremony video edit"
             ></video>
-            <div class="video-label">Piyush Greh Prevesh</div>
+            <div class="video-label">Piyush Griha Pravesh</div>
           </div>
           <div
             class="video-card reveal reveal-delay-4"
@@ -4714,13 +4470,13 @@
             data-category="vfx"
           >
             <video
-              src="Wedding invitation.mp4"
-              poster="Weeding.png"
+              src="wedding-invitation-video-edit.mp4"
+              poster="wedding-invitation-poster.png"
               controls
               preload="none"
               playsinline
               style="aspect-ratio: 16/9;"
-              aria-label="Vikas Vidyalaya Reel"
+              aria-label="Wedding invitation cinematic video edit"
             ></video>
             <div class="video-label">Wedding Invitation</div>
           </div>
@@ -4730,15 +4486,15 @@
             data-category="vfx"
           >
             <video
-              src="WB 10.mp4"
-              poster="WB.png"
+              src="west-bengal-government-project-edit.mp4"
+              poster="west-bengal-government-project-poster.png"
               controls
               style="aspect-ratio: 16/9;"
               preload="none"
               playsinline
-              aria-label="Vikas Vidyalaya Reel"
+              aria-label="West Bengal Government project video edit"
             ></video>
-            <div class="video-label">West Bengal Gov. Work </div>
+            <div class="video-label">West Bengal Gov. Work</div>
           </div>
         </div>
 
@@ -4884,7 +4640,7 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                Yes! Browse our <a href="https://thinkvisual.in/portfolio" style="color: var(--primary); text-decoration: underline;">Portfolio</a> section for a curated selection of our best work. We're also happy to share more examples upon request.
+                Yes! Browse our <a href="portfolio.html" style="color: var(--primary); text-decoration: underline;">Portfolio</a> section for a curated selection of our best work. We're also happy to share more examples upon request.
               </div>
             </div>
           </div>
@@ -5025,9 +4781,9 @@
     <footer aria-label="Site footer">
       <div class="footer-top">
         <div>
-          <a href="#home" class="logo" aria-label="Think Visual — home">
+          <a href="index.html" class="logo" aria-label="Think Visual — home">
             <img
-              src="logo.png"
+              src="think-visual-logo.png"
               alt="Think Visual logo"
               loading="lazy"
               onerror="
@@ -5039,17 +4795,17 @@
               THINK<span>.</span>VISUAL
             </div>
           </a>
-          <p class="footer-tagline">Creative Agency — Video, Web &amp; Digital</p>
+          <p class="footer-tagline"></p>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="#home" class="active" aria-current="page">Home</a></li>
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#brands">Brands</a>
-          <a href="#portfolio">Portfolio</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
+          <a href="index.html">Home</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#brands">Brands</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="index.html#testimonials">Testimonials</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="index.html#contact">Contact</a>
         </nav>
         <div class="footer-socials" aria-label="Social media">
           <a
@@ -5079,22 +4835,13 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <div class="footer-contact-info">
-          <a href="mailto:aayush12ab@gmail.com"
-            ><i class="fas fa-envelope" aria-hidden="true"></i>
-            aayush12ab@gmail.com</a
-          >
-          <a
-            href="https://api.whatsapp.com/send/?phone=917909010519"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><i class="fab fa-whatsapp" aria-hidden="true"></i> +91 79090
-            10519</a
-          >
-        </div>
         <p class="footer-credit">
           &copy; <span id="year"></span> <span>Think Visual</span>. All rights
           reserved.
+        </p>
+        <p class="footer-credit">
+          Created with ❤️ by
+          <span> <a href="https://www.webinstant.online/">WebInstant</a></span>
         </p>
       </div>
     </footer>
